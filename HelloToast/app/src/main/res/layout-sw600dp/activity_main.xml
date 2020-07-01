@@ -9,46 +9,33 @@
     <Button
         android:id="@+id/button_toast"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_height="56dp"
         android:background="@color/colorPrimary"
         android:onClick="showToast"
         android:text="@string/toast_button"
         android:textColor="@android:color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.024"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="60sp" />
 
     <Button
         android:id="@+id/button_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
         android:background="@color/colorPrimary"
         android:onClick="countUp"
         android:text="@string/count"
         android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_toast"
-        app:layout_constraintVertical_bias="0.252" />
+        android:textSize="60sp"
+        tools:layout_editor_absoluteY="976dp" />
 
     <TextView
         android:id="@+id/show_count"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="600dp"
+        android:layout_height="920dp"
         android:background="#FFFF00"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/starting_count"
         android:textAlignment="center"
-        android:textSize="120sp"
+        android:textSize="160sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/button_toast"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteY="56dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
