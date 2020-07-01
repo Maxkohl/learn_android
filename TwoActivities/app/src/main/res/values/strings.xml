@@ -3,4 +3,5 @@
     <string name="send_button">Send</string>
     <string name="activity2_name">Second Activity</string>
     <string name="text_header">Message Received</string>
+    <string name="editText_hint">Enter your message here</string>
 </resources>
