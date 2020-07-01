@@ -3,4 +3,5 @@
     <string name="toast_button">Toast</string>
     <string name="count">Count</string>
     <string name="starting_count">0</string>
+    <string name="toast_message">This is the toast message!</string>
 </resources>
