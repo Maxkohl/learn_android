@@ -49,8 +49,16 @@
 
                 />
 
+            <Button
+                android:id="@+id/add_comment_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/add_comment_button"
+                />
+
         </LinearLayout>
 
     </ScrollView>
+
 
 </RelativeLayout>
