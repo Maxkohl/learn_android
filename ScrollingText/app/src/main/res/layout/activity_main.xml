@@ -31,6 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/article_subtitle"
+        android:autoLink="web"
         android:lineSpacingExtra="5sp"
         android:padding="@dimen/padding_regular"
         android:text="@string/article_text"
