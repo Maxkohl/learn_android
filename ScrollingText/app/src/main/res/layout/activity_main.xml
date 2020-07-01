@@ -20,22 +20,30 @@
         android:id="@+id/article_subtitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/article_heading"
+        android:layout_below="@+id/article_heading"
         android:padding="@dimen/padding_regular"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault"
         android:textStyle="bold"
         android:text="@string/article_subtitle" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/article_subtitle">
 
     <TextView
         android:id="@+id/article"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/article_subtitle"
         android:autoLink="web"
         android:lineSpacingExtra="5sp"
         android:padding="@dimen/padding_regular"
         android:text="@string/article_text"
 
         />
+
+    </ScrollView>
 
 </RelativeLayout>
