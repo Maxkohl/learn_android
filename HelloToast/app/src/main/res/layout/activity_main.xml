@@ -29,7 +29,9 @@
         android:textSize="160sp"
         android:textStyle="bold"
         android:layout_margin="@dimen/default_margin"
-        android:layout_weight="1"/>
+        android:layout_below="@+id/button_toast"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/button_count"
@@ -39,5 +41,7 @@
         android:text="@string/count"
         android:textColor="@android:color/white"
         android:layout_margin="@dimen/default_margin"
+        android:layout_below="@+id/show_count"
+        android:layout_centerHorizontal="true"
         android:onClick="countUp" />
 </RelativeLayout>
