@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     private static final String LOG_TAG = "MainActivity";
-    private static final String EXTRA_MESSAGE = "com.example.android.twoactivities.extras.MESSAGE";
+    public static final String EXTRA_MESSAGE = "com.example.android.twoactivities.extras.MESSAGE";
 
     private EditText mMessageEditText;
 
