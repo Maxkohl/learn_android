@@ -26,4 +26,15 @@
         android:textStyle="bold"
         android:text="@string/article_subtitle" />
 
+    <TextView
+        android:id="@+id/article"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/article_subtitle"
+        android:lineSpacingExtra="5sp"
+        android:padding="@dimen/padding_regular"
+        android:text="@string/article_text"
+
+        />
+
 </RelativeLayout>
