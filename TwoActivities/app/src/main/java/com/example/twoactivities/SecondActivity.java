@@ -31,7 +31,9 @@ public class SecondActivity extends AppCompatActivity {
         Intent replyIntent = new Intent(this, MainActivity.class);
         replyIntent.putExtra(EXTRA_REPLY, reply);
         setResult(RESULT_OK, replyIntent);
+        mReply.setText("");
         finish();
+
 
     }
 }
