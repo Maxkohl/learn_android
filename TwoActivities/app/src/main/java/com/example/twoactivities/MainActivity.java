@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -50,5 +51,16 @@ public class MainActivity extends AppCompatActivity {
                 mReplyTextView.setVisibility(View.VISIBLE);
             }
         }
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        if (mReplyHeadTextView.getVisibility() == View.VISIBLE) {
+            outState.putBoolean("reply_visible", true);
+            outState.putString("reply_text", mReplyTextView.getText().toString());
+        }
+
     }
 }

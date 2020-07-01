@@ -33,7 +33,5 @@ public class SecondActivity extends AppCompatActivity {
         setResult(RESULT_OK, replyIntent);
         mReply.setText("");
         finish();
-
-
     }
 }
