@@ -1,12 +1,17 @@
 package com.example.hellocompat;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.TextView;
+
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,9 +37,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState, @NonNull PersistableBundle outPersistentState) {
         super.onSaveInstanceState(outState, outPersistentState);
-        outState.putInt("color", mHelloTextView.getCurrentTextColors());
+        outState.putInt("color", mHelloTextView.getCurrentTextColor());
     }
 
+
     public void changeColor(View view) {
+        Random random = new Random();
+        String colorName = mColorArray[random.nextInt(20)];
+        int colorResourceName = getResources().getIdentifier(colorName, "color",getApplicationContext().getPackageName());
+        int colorRes = ContextCompat.getColor(this, colorResourceName);
+        mHelloTextView.setTextColor(colorRes);
+
     }
 }
