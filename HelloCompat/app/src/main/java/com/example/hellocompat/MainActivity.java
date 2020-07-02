@@ -30,16 +30,10 @@ public class MainActivity extends AppCompatActivity {
         mHelloTextView = findViewById(R.id.hello_textview);
         if (savedInstanceState != null) {
             mHelloTextView.setTextColor(savedInstanceState.getInt("color"));
+            mHelloTextView.setText(savedInstanceState.getString("text"));
         }
 
     }
-
-    @Override
-    public void onSaveInstanceState(@NonNull Bundle outState, @NonNull PersistableBundle outPersistentState) {
-        super.onSaveInstanceState(outState, outPersistentState);
-        outState.putInt("color", mHelloTextView.getCurrentTextColor());
-    }
-
 
     public void changeColor(View view) {
         Random random = new Random();
@@ -48,5 +42,12 @@ public class MainActivity extends AppCompatActivity {
         int colorRes = ContextCompat.getColor(this, colorResourceName);
         mHelloTextView.setTextColor(colorRes);
 
+    }
+
+    @Override
+    public void onSaveInstanceState( @NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("color", mHelloTextView.getCurrentTextColor());
+        outState.putString("text", mHelloTextView.getText().toString());
     }
 }
