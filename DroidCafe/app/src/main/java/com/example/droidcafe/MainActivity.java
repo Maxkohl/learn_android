@@ -6,6 +6,7 @@ import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -16,6 +17,9 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static final String EXTRA_MESSAGE = "com.example.android.droidcafe.extra.MESSAGE";
+    private String mOrderMessage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), OrderActivity.class);
+                intent.putExtra(EXTRA_MESSAGE, mOrderMessage);
                 startActivity(intent);
             }
         });
@@ -60,15 +65,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showDonutOrder(View view) {
-        displayToast(getString(R.string.donut_order_message));
+        mOrderMessage = getString(R.string.donut_order_message);
+        displayToast(mOrderMessage);
     }
 
     public void showIceCreamOrder(View view) {
-        displayToast(getString(R.string.ice_cream_order_message));
+        mOrderMessage = getString(R.string.ice_cream_order_message);
+        displayToast(mOrderMessage);
     }
 
     public void showFroyoOrder(View view) {
-        displayToast(getString(R.string.froyo_order_message));
+        mOrderMessage = getString(R.string.froyo_order_message);
+        displayToast(mOrderMessage);
     }
 
 
