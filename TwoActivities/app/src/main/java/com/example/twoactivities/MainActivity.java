@@ -29,6 +29,16 @@ public class MainActivity extends AppCompatActivity {
         mMessageEditText = findViewById(R.id.editText_main);
         mReplyHeadTextView = findViewById(R.id.text_header_reply);
         mReplyTextView = findViewById(R.id.text_message_reply);
+
+        if (savedInstanceState != null) {
+            boolean isVisibile = savedInstanceState.getBoolean("reply_visible");
+            if (isVisibile) {
+                mReplyHeadTextView.setVisibility(View.VISIBLE);
+                mReplyTextView.setText(savedInstanceState.getString("reply_text"));
+                mReplyTextView.setVisibility(View.VISIBLE);
+            }
+
+        }
     }
 
     public void launchSecondActivity(View view) {
