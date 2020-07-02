@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Implicit Intents</string>
+    <string name="edittext_uri">http://developer.android.com</string>
 </resources>
