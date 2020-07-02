@@ -4,41 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
     <EditText
-        android:layout_width="wrap_content"
+        android:id="@+id/website_edittext"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/edittext_uri"
         />
 
     <Button
+        android:id="@+id/website_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Open Website"
+        android:text="@string/website_button"
+        android:layout_marginBottom="@dimen/standard_margin"
+        android:onClick="openWebsite"
         />
     <EditText
-        android:layout_width="wrap_content"
+        android:id="@+id/loc_edittext"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/edittext_uri"
+        android:hint="@string/edittext_loc"
         />
 
     <Button
+        android:id="@+id/loc_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Open Website"
+        android:text="@string/loc_button"
+        android:layout_marginBottom="@dimen/standard_margin"
+        android:onClick="openLocation"
         />
     <EditText
-        android:layout_width="wrap_content"
+        android:id="@+id/share_edittext"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/edittext_uri"
+        android:hint="@string/edittext_share"
         />
 
     <Button
+        android:id="@+id/share_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Open Website"
+        android:text="@string/share_button"
+        android:layout_marginBottom="@dimen/standard_margin"
+        android:onClick="shareText"
         />
 
 </LinearLayout>
