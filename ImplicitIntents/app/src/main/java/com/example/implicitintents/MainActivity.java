@@ -42,6 +42,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openLocation(View view) {
+        String loc = mLocEditText.getText().toString();
+        Uri addressUri = Uri.parse("geo:0,0?q=" + loc);
+        Intent intent = new Intent(Intent.ACTION_VIEW, addressUri);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        } else {
+            Log.d(TAG, "Can't handle this location request!");
+        }
+
     }
 
     public void shareText(View view) {
