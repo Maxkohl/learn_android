@@ -140,4 +140,7 @@ public class MainActivity extends Activity {
     private static String getOperandText(EditText operandEditText) {
         return operandEditText.getText().toString();
     }
+
+    public void onPow(View view) {
+    }
 }
