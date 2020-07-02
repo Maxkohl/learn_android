@@ -121,6 +121,7 @@ public class MainActivity extends Activity {
                 break;
             case POW:
                 result = String.valueOf(mCalculator.pow(operandOne, operandTwo));
+                break;
             default:
                 result = getString(R.string.computationError);
                 break;
