@@ -108,6 +108,14 @@ public class CalculatorTest {
 
     }
 
+    @Test
+    public void powTwoNumbers() {
+        double resultPow = mCalculator.pow(9d, 2d);
+        assertThat(resultPow, is(equalTo(81d)));
+    }
+    
+
+
 
 
 
