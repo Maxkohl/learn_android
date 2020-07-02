@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Log.d("ImplicitIntents", "Can't be handled!");
         }
+        startActivity(intent);
     }
 
     public void shareText(View view) {
