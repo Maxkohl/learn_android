@@ -2,8 +2,9 @@
     <string name="app_name">Implicit Intents</string>
     <string name="edittext_uri">http://developer.android.com</string>
     <string name="loc_button">Open Location</string>
-    <string name="website_button">website_button</string>
+    <string name="website_button">Open Website</string>
     <string name="edittext_loc">Golden Gate Bridge</string>
     <string name="edittext_share">\'Twas brillig and the slithy toves</string>
     <string name="share_button">Share</string>
+    <string name="sharetext_chooser">\"Share this text with: \"</string>
 </resources>

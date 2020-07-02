@@ -1,6 +1,7 @@
 package com.example.implicitintents;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ShareCompat;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -35,10 +36,8 @@ public class MainActivity extends AppCompatActivity {
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         } else {
-            Log.d(TAG, "Can't handle this!");
+            Log.d("ImplicitIntents", "Can't be handled!");
         }
-
-
     }
 
     public void openLocation(View view) {
@@ -48,11 +47,13 @@ public class MainActivity extends AppCompatActivity {
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         } else {
-            Log.d(TAG, "Can't handle this location request!");
+            Log.d("ImplicitIntents", "Can't be handled!");
         }
-
     }
 
     public void shareText(View view) {
+        String text = mShareEditText.getText().toString();
+        String mimeType = "text/plain";
+        ShareCompat.IntentBuilder.from(this).setType(mimeType).setChooserTitle(R.string.sharetext_chooser).setText(text).startChooser();
     }
 }
