@@ -2,4 +2,7 @@
     <string name="app_name">Tab Experiment</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="top_stories">These are the Top Stories:</string>
+    <string name="tech_news">Tech News you can USE:</string>
+    <string name="cooking_tips">Cooking Tips:</string>
 </resources>
