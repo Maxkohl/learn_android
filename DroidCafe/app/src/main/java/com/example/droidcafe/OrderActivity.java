@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 public class OrderActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
+    private String spinnerLabel;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +66,9 @@ public class OrderActivity extends AppCompatActivity implements AdapterView.OnIt
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        spinnerLabel = adapterView.getItemAtPosition(i).toString();
+        displayToast(spinnerLabel);
+
 
     }
 
