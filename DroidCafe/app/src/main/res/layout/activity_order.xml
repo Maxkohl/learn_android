@@ -75,7 +75,7 @@
 
     <EditText
         android:id="@+id/phone_text"
-        android:layout_width="wrap_content"
+        android:layout_width="172dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -122,18 +122,18 @@
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginLeft="24dp"
         android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/delivery_label" >
+        app:layout_constraintTop_toBottomOf="@id/delivery_label">
 
         <RadioButton
             android:id="@+id/same_day"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/same_day_string"
             android:onClick="onRadioButtonClicked"
+            android:text="@string/same_day_string"
 
             />
 
@@ -141,23 +141,28 @@
             android:id="@+id/next_day"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/next_day"
+            android:checked="true"
             android:onClick="onRadioButtonClicked"
-            android:checked="true"/>
+            android:text="@string/next_day" />
 
         <RadioButton
             android:id="@+id/pickup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/pickup"
-            android:onClick="onRadioButtonClicked" />
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/pickup" />
 
     </RadioGroup>
 
-
-
-
-
+    <Spinner
+        android:id="@+id/label_spinner"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintStart_toEndOf="@+id/phone_text"
+        app:layout_constraintTop_toBottomOf="@+id/address_text" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
