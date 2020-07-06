@@ -38,4 +38,12 @@ public class MainActivity extends AppCompatActivity {
         newFragment.show(getSupportFragmentManager(), getString(R.string.time_picker));
 
     }
+
+    public void processTimePickerResults(int hour, int minute) {
+        String time_hour = Integer.toString(hour);
+        String time_minute = Integer.toString(minute);
+        String timeMessage = "Time Picked: " + time_hour + ":" + time_minute;
+
+        Toast.makeText(this, timeMessage, Toast.LENGTH_SHORT).show();
+    }
 }
