@@ -21,4 +21,6 @@
     <string name="nameinput_hint">Enter Your Name</string>
     <string name="enter_address_hint">Enter Your Address</string>
     <string name="address_label">Address</string>
+    <string name="phone_label">Phone</string>
+    <string name="enter_phone_hint">Enter Phone Number</string>
 </resources>
