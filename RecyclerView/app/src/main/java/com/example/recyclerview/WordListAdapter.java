@@ -1,5 +1,6 @@
 package com.example.recyclerview;
 
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -12,6 +13,7 @@ import java.util.LinkedList;
 public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordViewHolder> {
 
     private LinkedList<String> mWordList;
+    private LayoutInflater mInflater;
 
     @NonNull
     @Override
