@@ -7,7 +7,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.LinkedList;
+
 public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordViewHolder> {
+
+    private LinkedList<String> mWordList;
 
     @NonNull
     @Override
@@ -22,7 +26,7 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mWordList.size();
     }
 
     class WordViewHolder extends RecyclerView.ViewHolder {
