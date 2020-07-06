@@ -6,6 +6,7 @@ import androidx.fragment.app.DialogFragment;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,7 +20,16 @@ public class MainActivity extends AppCompatActivity {
         DialogFragment newFragment = new DatePickerFragment();
         newFragment.show(getSupportFragmentManager(),
                 getString(R.string.date_picker_text));
+    }
 
+    public void processDatePicketResults(int year, int month, int day) {
+        String month_string = Integer.toString(month+1);
+        String day_string = Integer.toString(day);
+        String year_string = Integer.toString(year);
+        String dateMessage = (month_string +
+                "/" + day_string + "/" + year_string);
 
+        Toast.makeText(this, getString(R.string.date_toast) + dateMessage,
+                Toast.LENGTH_SHORT).show();
     }
 }
