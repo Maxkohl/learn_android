@@ -32,4 +32,11 @@
     <string name="same_day_message">Same day delivery chosen</string>
     <string name="next_day_message">Next day delivery chosen</string>
     <string name="self_pickup_message">Self pickup chosen</string>
+
+    <string-array name="label_array">
+        <item>Home</item>
+        <item>Work</item>
+        <item>Mobile</item>
+        <item>Other</item>
+    </string-array>
 </resources>
