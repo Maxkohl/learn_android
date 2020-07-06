@@ -29,4 +29,7 @@
     <string name="same_day_string">Same Day</string>
     <string name="next_day">Next Day Ground Delivery</string>
     <string name="pickup">Pick Up</string>
+    <string name="same_day_message">Same day delivery chosen</string>
+    <string name="next_day_message">Next day delivery chosen</string>
+    <string name="self_pickup_message">Self pickup chosen</string>
 </resources>
