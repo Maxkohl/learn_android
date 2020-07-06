@@ -7,4 +7,5 @@
     <string name="date_picker_text">datePicker</string>
     <string name="date_toast">Date: </string>
     <string name="time_button">Time</string>
+    <string name="time_picker">Time Picker</string>
 </resources>

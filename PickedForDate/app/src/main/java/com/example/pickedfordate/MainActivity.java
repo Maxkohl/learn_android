@@ -34,5 +34,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showTimePicker(View view) {
+        DialogFragment newFragment = new TimePickerFragment();
+        newFragment.show(getSupportFragmentManager(), getString(R.string.time_picker));
+
     }
 }

@@ -21,9 +21,7 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
 
-        }
     }
 
     @NonNull
@@ -37,10 +35,9 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
     }
 
 
-
     @Override
     public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-        MainActivity activity = (MainActivity)getActivity();
+        MainActivity activity = (MainActivity) getActivity();
         activity.processDatePicketResults(year, month, day);
 
     }
