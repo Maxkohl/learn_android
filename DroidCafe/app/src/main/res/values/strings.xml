@@ -19,4 +19,6 @@
     <string name="froyo_order_message">You ordered a FroYo.</string>
     <string name="name_label">Name</string>
     <string name="nameinput_hint">Enter Your Name</string>
+    <string name="enter_address_hint">Enter Your Address</string>
+    <string name="address_label">Address</string>
 </resources>
