@@ -32,4 +32,7 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, getString(R.string.date_toast) + dateMessage,
                 Toast.LENGTH_SHORT).show();
     }
+
+    public void showTimePicker(View view) {
+    }
 }
