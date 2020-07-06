@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">4.2 Challenge App</string>
+    <string name="phone_label">Make a call</string>
 </resources>
