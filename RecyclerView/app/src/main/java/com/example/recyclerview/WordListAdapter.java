@@ -1,6 +1,8 @@
 package com.example.recyclerview;
 
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,5 +23,17 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
     @Override
     public int getItemCount() {
         return 0;
+    }
+
+    class WordViewHolder extends RecyclerView.ViewHolder {
+        public final TextView wordItemView;
+        final WordListAdapter mAdapter;
+
+
+        public WordViewHolder(@NonNull View itemView, TextView wordItemView, WordListAdapter mAdapter) {
+            super(itemView);
+            this.wordItemView = itemView.findViewById(R.id.word);
+            this.mAdapter = mAdapter;
+        }
     }
 }
