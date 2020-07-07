@@ -4,13 +4,30 @@
             "outputFile": "C:\\Users\\Max_K\\Development\\android_fundamentals\\MaterialMe-Starter\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
             "map": [
                 {
+                    "source": "C:\\Users\\Max_K\\Development\\android_fundamentals\\MaterialMe-Starter\\app\\src\\main\\res\\values-sw600dp\\styles.xml",
+                    "from": {
+                        "startLines": "-1,4",
+                        "startColumns": "-1,4",
+                        "startOffsets": "-1,148",
+                        "endLines": "-1,8",
+                        "endColumns": "-1,12",
+                        "endOffsets": "-1,324"
+                    },
+                    "to": {
+                        "startLines": "20,21",
+                        "startColumns": "4,4",
+                        "startOffsets": "1283,1364",
+                        "endLines": "20,23",
+                        "endColumns": "80,12",
+                        "endOffsets": "1359,1518"
+                    }
+                },
+                {
                     "source": "C:\\Users\\Max_K\\Development\\android_fundamentals\\MaterialMe-Starter\\app\\src\\main\\res\\values-sw600dp\\integers.xml",
                     "from": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "59",
-                        "endColumns": "49",
-                        "endOffsets": "104"
+                        "startLines": "-1",
+                        "startColumns": "-1",
+                        "startOffsets": "-1"
                     },
                     "to": {
                         "startLines": "19",
@@ -28,12 +45,12 @@
                         "startOffsets": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1"
                     },
                     "to": {
-                        "startLines": "10,11,12,13,14,15,16,17,18,20",
+                        "startLines": "10,11,12,13,14,15,16,17,18,24",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "611,671,741,812,884,942,1000,1106,1170,1283",
-                        "endLines": "10,11,12,13,14,15,16,17,18,23",
+                        "startOffsets": "611,671,741,812,884,942,1000,1106,1170,1523",
+                        "endLines": "10,11,12,13,14,15,16,17,18,27",
                         "endColumns": "59,69,70,71,57,57,105,63,62,12",
-                        "endOffsets": "666,736,807,879,937,995,1101,1165,1228,1460"
+                        "endOffsets": "666,736,807,879,937,995,1101,1165,1228,1700"
                     }
                 },
                 {
