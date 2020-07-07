@@ -52,12 +52,18 @@ public class MainActivity extends AppCompatActivity {
         // Initialize the ArrayList that will contain the data.
         mSportsData = new ArrayList<>();
 
-        // Initialize the adapter and set it to the RecyclerView.
-        mAdapter = new SportsAdapter(this, mSportsData);
-        mRecyclerView.setAdapter(mAdapter);
+        if (savedInstanceState != null) {
+            mSportsData = savedInstanceState.getParcelableArrayList("key");
+            mAdapter = new SportsAdapter(this, mSportsData);
+            mRecyclerView.setAdapter(mAdapter);
+        } else {
+            // Initialize the adapter and set it to the RecyclerView.
+            mAdapter = new SportsAdapter(this, mSportsData);
+            mRecyclerView.setAdapter(mAdapter);
 
-        // Get the data.
-        initializeData();
+            // Get the data.
+            initializeData();
+        }
 
         ItemTouchHelper helper = new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT | ItemTouchHelper.DOWN | ItemTouchHelper.UP, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
             @Override
@@ -110,4 +116,9 @@ public class MainActivity extends AppCompatActivity {
         initializeData();
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putParcelableArrayList("key", mSportsData);
+        super.onSaveInstanceState(outState);
+    }
 }

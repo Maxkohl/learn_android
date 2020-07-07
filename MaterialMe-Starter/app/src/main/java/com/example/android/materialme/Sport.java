@@ -16,10 +16,13 @@
 
 package com.example.android.materialme;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Data model for each row of the RecyclerView
  */
-class Sport {
+class Sport implements Parcelable {
 
     // Member variables representing the title and information about the sport.
     private String title;
@@ -58,5 +61,17 @@ class Sport {
 
     public int getImageResource() {
         return imageResource;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel out, int i) {
+        out.writeString(title);
+        out.writeString(info);
+        out.writeInt(imageResource);
     }
 }
