@@ -1183,38 +1183,6 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\Max_K\\Development\\android_fundamentals\\MaterialMe-Starter\\app\\build\\intermediates\\res\\merged\\debug\\values-ml_values-ml.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\Max_K\\.gradle\\caches\\transforms-2\\files-2.1\\9bab41cd1cac7e96d8cf039a3df31825\\appcompat-v7-27.1.1\\res\\values-ml\\values-ml.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,224,342,457,550,655,787,864,940,1022,1133,1239,1337,1451,1551,1662,1821,1922",
-                        "endColumns": "118,117,114,92,104,131,76,75,81,110,105,97,113,99,110,158,100,81",
-                        "endOffsets": "219,337,452,545,650,782,859,935,1017,1128,1234,1332,1446,1546,1657,1816,1917,1999"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Max_K\\.gradle\\caches\\transforms-2\\files-2.1\\ea0ee35f22a88ff9d8bac691cda371e2\\support-compat-27.1.1\\res\\values-ml\\values-ml.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "20",
-                        "startColumns": "4",
-                        "startOffsets": "2004",
-                        "endColumns": "100",
-                        "endOffsets": "2100"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "C:\\Users\\Max_K\\Development\\android_fundamentals\\MaterialMe-Starter\\app\\build\\intermediates\\res\\merged\\debug\\values-zh-rCN_values-zh-rCN.arsc.flat",
             "map": [
                 {
@@ -1242,6 +1210,38 @@
                         "startOffsets": "105,201,296,396,478,575,681,757,833,911,1007,1103,1198,1295,1390,1488,1637,1731",
                         "endColumns": "95,94,99,81,96,105,75,75,77,95,95,94,96,94,97,148,93,77",
                         "endOffsets": "196,291,391,473,570,676,752,828,906,1002,1098,1193,1290,1385,1483,1632,1726,1804"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\Max_K\\Development\\android_fundamentals\\MaterialMe-Starter\\app\\build\\intermediates\\res\\merged\\debug\\values-ml_values-ml.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\Max_K\\.gradle\\caches\\transforms-2\\files-2.1\\9bab41cd1cac7e96d8cf039a3df31825\\appcompat-v7-27.1.1\\res\\values-ml\\values-ml.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,224,342,457,550,655,787,864,940,1022,1133,1239,1337,1451,1551,1662,1821,1922",
+                        "endColumns": "118,117,114,92,104,131,76,75,81,110,105,97,113,99,110,158,100,81",
+                        "endOffsets": "219,337,452,545,650,782,859,935,1017,1128,1234,1332,1446,1546,1657,1816,1917,1999"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Max_K\\.gradle\\caches\\transforms-2\\files-2.1\\ea0ee35f22a88ff9d8bac691cda371e2\\support-compat-27.1.1\\res\\values-ml\\values-ml.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "2004",
+                        "endColumns": "100",
+                        "endOffsets": "2100"
                     }
                 }
             ]
@@ -2192,27 +2192,46 @@
             "outputFile": "C:\\Users\\Max_K\\Development\\android_fundamentals\\MaterialMe-Starter\\app\\build\\intermediates\\res\\merged\\debug\\values-sw600dp-v13_values-sw600dp-v13.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\Max_K\\.gradle\\caches\\transforms-2\\files-2.1\\00ef7feff03d4d1c1dbd16092dcf85dc\\design-27.1.1\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\Max_K\\Development\\android_fundamentals\\MaterialMe-Starter\\app\\src\\main\\res\\values-sw600dp\\integers.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,115,185,256,328,386,444,550,614,677",
-                        "endLines": "2,3,4,5,6,7,8,9,10,14",
-                        "endColumns": "59,69,70,71,57,57,105,63,62,12",
-                        "endOffsets": "110,180,251,323,381,439,545,609,672,854"
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "59",
+                        "endColumns": "49",
+                        "endOffsets": "104"
                     },
                     "to": {
-                        "startLines": "10,11,12,13,14,15,16,17,18,19",
+                        "startLines": "19",
+                        "startColumns": "4",
+                        "startOffsets": "1233",
+                        "endColumns": "49",
+                        "endOffsets": "1278"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Max_K\\.gradle\\caches\\transforms-2\\files-2.1\\00ef7feff03d4d1c1dbd16092dcf85dc\\design-27.1.1\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "from": {
+                        "startLines": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1"
+                    },
+                    "to": {
+                        "startLines": "10,11,12,13,14,15,16,17,18,20",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "611,671,741,812,884,942,1000,1106,1170,1233",
-                        "endLines": "10,11,12,13,14,15,16,17,18,22",
+                        "startOffsets": "611,671,741,812,884,942,1000,1106,1170,1283",
+                        "endLines": "10,11,12,13,14,15,16,17,18,23",
                         "endColumns": "59,69,70,71,57,57,105,63,62,12",
-                        "endOffsets": "666,736,807,879,937,995,1101,1165,1228,1410"
+                        "endOffsets": "666,736,807,879,937,995,1101,1165,1228,1460"
                     }
                 },
                 {
                     "source": "C:\\Users\\Max_K\\.gradle\\caches\\transforms-2\\files-2.1\\9bab41cd1cac7e96d8cf039a3df31825\\appcompat-v7-27.1.1\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
+                        "startLines": "-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1,-1,-1,-1,-1"
+                    },
+                    "to": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
                         "startOffsets": "55,124,193,263,337,413,472,543",
@@ -3119,6 +3138,28 @@
                         "startOffsets": "55",
                         "endColumns": "55",
                         "endOffsets": "106"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\Max_K\\Development\\android_fundamentals\\MaterialMe-Starter\\app\\build\\intermediates\\res\\merged\\debug\\values-sw600dp-land-v13_values-sw600dp-land-v13.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\Max_K\\Development\\android_fundamentals\\MaterialMe-Starter\\app\\src\\main\\res\\values-sw600dp-land\\integers.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "57",
+                        "endColumns": "49",
+                        "endOffsets": "102"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "49",
+                        "endOffsets": "100"
                     }
                 }
             ]
