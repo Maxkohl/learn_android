@@ -3,4 +3,6 @@
     <string name="starting_score">0</string>
     <string name="team_1">Team 1</string>
     <string name="team_2">Team 2</string>
+    <string name="minus_button_desc">Minus button</string>
+    <string name="plus_button_desc">Plus button</string>
 </resources>
