@@ -20,8 +20,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mScore1Text = (TextView)findViewById(R.id.score_team1);
-        mScore2Text = (TextView)findViewById(R.id.score_team2);
+        mScore1Text = (TextView) findViewById(R.id.score_team1);
+        mScore2Text = (TextView) findViewById(R.id.score_team2);
 
     }
 
