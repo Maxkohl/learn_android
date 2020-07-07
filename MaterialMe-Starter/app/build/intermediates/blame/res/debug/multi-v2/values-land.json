@@ -6,30 +6,49 @@
                 {
                     "source": "C:\\Users\\Max_K\\.gradle\\caches\\transforms-2\\files-2.1\\00ef7feff03d4d1c1dbd16092dcf85dc\\design-27.1.1\\res\\values-land\\values-land.xml",
                     "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "5",
-                        "endColumns": "12",
-                        "endOffsets": "232"
+                        "startLines": "-1",
+                        "startColumns": "-1",
+                        "startOffsets": "-1"
                     },
                     "to": {
-                        "startLines": "6",
+                        "startLines": "7",
                         "startColumns": "4",
-                        "startOffsets": "328",
-                        "endLines": "9",
+                        "startOffsets": "378",
+                        "endLines": "10",
                         "endColumns": "12",
-                        "endOffsets": "505"
+                        "endOffsets": "555"
                     }
                 },
                 {
                     "source": "C:\\Users\\Max_K\\.gradle\\caches\\transforms-2\\files-2.1\\9bab41cd1cac7e96d8cf039a3df31825\\appcompat-v7-27.1.1\\res\\values-land\\values-land.xml",
                     "from": {
+                        "startLines": "-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1"
+                    },
+                    "to": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
                         "startOffsets": "55,125,189,260",
                         "endColumns": "69,63,70,67",
                         "endOffsets": "120,184,255,323"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Max_K\\Development\\android_fundamentals\\MaterialMe-Starter\\app\\src\\main\\res\\values-land\\integers.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "57",
+                        "endColumns": "49",
+                        "endOffsets": "102"
+                    },
+                    "to": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "328",
+                        "endColumns": "49",
+                        "endOffsets": "373"
                     }
                 }
             ]
