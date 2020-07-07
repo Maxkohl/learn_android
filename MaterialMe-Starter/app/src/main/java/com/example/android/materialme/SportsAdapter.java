@@ -17,6 +17,7 @@
 package com.example.android.materialme;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -96,7 +97,7 @@ class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder>  {
     /**
      * ViewHolder class that represents each row of data in the RecyclerView.
      */
-    class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         // Member Variables for the TextViews
         private TextView mTitleText;
@@ -114,6 +115,7 @@ class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder>  {
             mTitleText = itemView.findViewById(R.id.title);
             mInfoText = itemView.findViewById(R.id.subTitle);
             mSportsImage = itemView.findViewById(R.id.sportsImage);
+            itemView.setOnClickListener(this);
         }
 
         void bindTo(Sport currentSport){
@@ -122,6 +124,17 @@ class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder>  {
             mInfoText.setText(currentSport.getInfo());
             Glide.with(mContext).load(currentSport.getImageResource()).into(mSportsImage);
 
+        }
+
+        @Override
+        public void onClick(View view) {
+
+            Sport currentSport = mSportsData.get(getAdapterPosition());
+            Intent intent = new Intent(mContext, DetailActivity.class);
+            intent.putExtra("title", currentSport.getTitle());
+            intent.putExtra("image_resource", currentSport.getImageResource());
+            mContext.startActivity(intent);
+            
         }
     }
 }
