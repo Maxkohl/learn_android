@@ -8,7 +8,7 @@
     </style>
 
     <style name="ScoreButtons" parent="Widget.AppCompat.Button">
-        <item name="android:background">@drawable/button_background</item>
+        <item name="android:background">@drawable/button_custom</item>
     </style>
 
     <style name="PlusButtons" parent="ScoreButtons">
