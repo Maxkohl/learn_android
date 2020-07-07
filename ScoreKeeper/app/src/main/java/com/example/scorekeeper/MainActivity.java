@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     private int score2;
     private TextView mScore1Text;
     private TextView mScore2Text;
+    final static String STATE_SCORE_1 = "Team 1 Score";
+    final static String STATE_SCORE_2 = "Team 2 Score";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,13 @@ public class MainActivity extends AppCompatActivity {
 
         mScore1Text = (TextView) findViewById(R.id.score_team1);
         mScore2Text = (TextView) findViewById(R.id.score_team2);
+
+        if (savedInstanceState != null) {
+            score1 = savedInstanceState.getInt(STATE_SCORE_1);
+            score2 = savedInstanceState.getInt(STATE_SCORE_2);
+            mScore1Text.setText(String.valueOf(score1));
+            mScore2Text.setText(String.valueOf(score2));
+        }
 
     }
 
@@ -62,9 +71,9 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.main_menu, menu);
         // Change the label of the menu based on the state of the app.
         int nightMode = AppCompatDelegate.getDefaultNightMode();
-        if(nightMode == AppCompatDelegate.MODE_NIGHT_YES){
+        if (nightMode == AppCompatDelegate.MODE_NIGHT_YES) {
             menu.findItem(R.id.night_mode).setTitle(R.string.day_mode);
-        } else{
+        } else {
             menu.findItem(R.id.night_mode).setTitle(R.string.night_mode);
         }
         return true;
@@ -72,16 +81,28 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int itemID = item.getItemId();
-        if (itemID == R.id.night_mode) {
+        if (item.getItemId() == R.id.night_mode) {
+            // Get the night mode state of the app.
             int nightMode = AppCompatDelegate.getDefaultNightMode();
+            //Set the theme mode for the restarted activity
             if (nightMode == AppCompatDelegate.MODE_NIGHT_YES) {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                AppCompatDelegate.setDefaultNightMode
+                        (AppCompatDelegate.MODE_NIGHT_NO);
+            } else {
+                AppCompatDelegate.setDefaultNightMode
+                        (AppCompatDelegate.MODE_NIGHT_YES);
             }
-        } else {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            // Recreate the activity for the theme change to take effect.
+            recreate();
+
         }
         return super.onOptionsItemSelected(item);
+    }
 
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        outState.putInt(STATE_SCORE_1, score1);
+        outState.putInt(STATE_SCORE_2, score2);
+        super.onSaveInstanceState(outState);
     }
 }
