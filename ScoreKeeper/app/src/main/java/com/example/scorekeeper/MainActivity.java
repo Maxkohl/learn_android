@@ -26,8 +26,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void decreaseScore(View view) {
+        int viewID = view.getId();
+        switch (viewID) {
+            case R.id.decrease_team1:
+                score1--;
+                mScore1Text.setText(String.valueOf(score1));
+                break;
+            case R.id.decrease_team2:
+                score2--;
+                mScore2Text.setText(String.valueOf(score2));
+                break;
+        }
     }
 
     public void increaseScore(View view) {
+        int viewID = view.getId();
+        switch (viewID) {
+            case R.id.increase_team1:
+                score1++;
+                mScore1Text.setText(String.valueOf(score1));
+                break;
+            case R.id.increase_team2:
+                score2++;
+                mScore2Text.setText(String.valueOf(score2));
+                break;
+        }
     }
 }
