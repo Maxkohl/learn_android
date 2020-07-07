@@ -27,10 +27,8 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/ic_minus"
             android:onClick="decreaseScore"
-            android:contentDescription="@string/minus_button_desc"
-            android:background="@drawable/button_background"/>
+            style="@style/MinusButtons"/>
 
         <TextView
             android:id="@+id/score_team1"
@@ -49,8 +47,7 @@
             android:layout_alignParentEnd="true"
             android:src="@drawable/ic_baseline_add_24"
             android:onClick="increaseScore"
-            android:contentDescription="@string/plus_button_desc"
-            android:background="@drawable/button_background"/>
+            style="@style/PlusButtons"/>
 
 
     </RelativeLayout>
@@ -77,8 +74,7 @@
             android:layout_centerVertical="true"
             android:src="@drawable/ic_minus"
             android:onClick="decreaseScore"
-            android:contentDescription="@string/minus_button_desc"
-            android:background="@drawable/button_background"/>
+            style="@style/MinusButtons"/>
 
 
         <TextView
@@ -97,8 +93,7 @@
             android:layout_centerVertical="true"
             android:src="@drawable/ic_baseline_add_24"
             android:onClick="increaseScore"
-            android:contentDescription="@string/plus_button_desc"
-            android:background="@drawable/button_background"
+            style="@style/PlusButtons"
             android:layout_alignParentEnd="true" />
 
 
