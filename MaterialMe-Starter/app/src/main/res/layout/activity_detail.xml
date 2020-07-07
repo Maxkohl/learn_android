@@ -47,6 +47,18 @@
             android:padding="8dp"
             android:paddingBottom="16dp"
             android:text="@string/lorem_ipsum" />
+        
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_reset"
+            android:tint="@android:color/white"
+            android:onClick="resetSports" />
 
     </RelativeLayout>
 </ScrollView>
