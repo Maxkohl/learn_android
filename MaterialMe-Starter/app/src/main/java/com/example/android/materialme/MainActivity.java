@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         // Create the ArrayList of Sports objects with titles and
         // information about each sport.
         for(int i=0;i<sportsList.length;i++){
-            mSportsData.add(new Sport(sportsList[i],sportsInfo[i]));
+            mSportsData.add(new Sport(sportsList[i],sportsInfo[i], imageResource));
         }
 
         // Notify the adapter of the change.
