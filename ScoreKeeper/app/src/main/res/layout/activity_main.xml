@@ -17,9 +17,10 @@
             android:id="@+id/team_1_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:text="@string/team_1" />
 
-        <Button
+        <ImageButton
             android:id="@+id/decrease_team1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -35,15 +36,16 @@
             android:layout_centerVertical="true"
             android:text="@string/starting_score" />
 
-        <Button
+        <ImageButton
             android:id="@+id/increase_team1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerVertical="true" />
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true" />
 
     </RelativeLayout>
-    
+
     <RelativeLayout
         android:id="@+id/team_2"
         android:layout_width="match_parent"
@@ -54,9 +56,10 @@
             android:id="@+id/team_2_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/team_2" />
+            android:text="@string/team_2"
+            android:layout_centerHorizontal="true"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/decrease_team2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -72,11 +75,11 @@
             android:layout_centerVertical="true"
             android:text="@string/starting_score" />
 
-        <Button
+        <ImageButton
             android:id="@+id/increase_team2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
             android:layout_centerVertical="true" />
 
     </RelativeLayout>
