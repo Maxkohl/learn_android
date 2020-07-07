@@ -1,0 +1,28 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\Max_K\\Development\\android_fundamentals\\MaterialMe-Starter\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-de-rDE\\values-de-rDE.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Max_K\\Development\\android_fundamentals\\MaterialMe-Starter\\app\\src\\main\\res\\values-de-rDE\\strings.xml",
+                    "from": {
+                        "startLines": "31,17,3",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "1073,465,59",
+                        "endLines": "43,29,15",
+                        "endColumns": "12,19,19",
+                        "endOffsets": "1605,1065,457"
+                    },
+                    "to": {
+                        "startLines": "2,15,28",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,580,1173",
+                        "endLines": "14,27,40",
+                        "endColumns": "12,19,19",
+                        "endOffsets": "575,1168,1559"
+                    }
+                }
+            ]
+        }
+    ]
+}
