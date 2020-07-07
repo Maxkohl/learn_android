@@ -41,6 +41,24 @@ class Sport implements Parcelable {
         this.imageResource = imageResource;
     }
 
+    protected Sport(Parcel in) {
+        title = in.readString();
+        info = in.readString();
+        imageResource = in.readInt();
+    }
+
+    public static final Creator<Sport> CREATOR = new Creator<Sport>() {
+        @Override
+        public Sport createFromParcel(Parcel in) {
+            return new Sport(in);
+        }
+
+        @Override
+        public Sport[] newArray(int size) {
+            return new Sport[size];
+        }
+    };
+
     /**
      * Gets the title of the sport.
      *

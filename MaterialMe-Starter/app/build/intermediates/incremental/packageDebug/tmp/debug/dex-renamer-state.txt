@@ -1,4 +1,4 @@
-#Tue Jul 07 16:38:47 EDT 2020
+#Tue Jul 07 16:48:25 EDT 2020
 base.0=C\:\\Users\\Max_K\\Development\\android_fundamentals\\MaterialMe-Starter\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex
