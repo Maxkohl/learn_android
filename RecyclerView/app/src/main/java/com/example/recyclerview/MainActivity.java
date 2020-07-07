@@ -7,6 +7,8 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.View;
 
@@ -18,6 +20,8 @@ import java.util.LinkedList;
 public class MainActivity extends AppCompatActivity {
 
     private final LinkedList<String> mWorldList = new LinkedList<>();
+    private RecyclerView mRecyclerView;
+    private WordListAdapter mAdapter;
 
 
     @Override
@@ -39,6 +43,14 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < 20; i++) {
             mWorldList.add("Word " + i);
         }
+
+        mRecyclerView = findViewById(R.id.recyclerview);
+        //Create adapter and supply data to be displayed
+        mAdapter =  new WordListAdapter(mWorldList, this);
+        //Connect adapter to RecyclerView
+        mRecyclerView.setAdapter(mAdapter);
+        //Give RecyclerView default layout manager
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
     @Override
