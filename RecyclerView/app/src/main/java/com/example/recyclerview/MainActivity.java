@@ -45,9 +45,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        for (int i = 0; i < 20; i++) {
-            mWorldList.add("Word " + i);
-        }
+        createWordList();
 
         mRecyclerView = findViewById(R.id.recyclerview);
         //Create adapter and supply data to be displayed
@@ -73,10 +71,21 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_reset) {
+            mWorldList.clear();
+            createWordList();
+            mAdapter.notifyDataSetChanged();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public LinkedList<String> createWordList() {
+        LinkedList<String> resultList = new LinkedList<>();
+        for (int i = 0; i < 20; i++) {
+            mWorldList.add("Word " + i);
+        }
+        return resultList;
     }
 }
