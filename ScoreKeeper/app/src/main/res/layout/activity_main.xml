@@ -18,8 +18,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:text="@string/team_1" />
-
+            android:text="@string/team_1"
+            style="@style/ScoreText" />
         <ImageButton
             android:id="@+id/decrease_team1"
             android:layout_width="@dimen/standard_button"
@@ -36,7 +36,8 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="@string/starting_score" />
+            android:text="@string/starting_score"
+            style="@style/ScoreText"/>
 
         <ImageButton
             android:id="@+id/increase_team1"
@@ -63,7 +64,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/team_2"
-            android:layout_centerHorizontal="true"/>
+            android:layout_centerHorizontal="true"
+            style="@style/ScoreText"/>
 
         <ImageButton
             android:id="@+id/decrease_team2"
@@ -83,7 +85,8 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="@string/starting_score" />
+            android:text="@string/starting_score"
+            style="@style/ScoreText"/>
 
         <ImageButton
             android:id="@+id/increase_team2"
