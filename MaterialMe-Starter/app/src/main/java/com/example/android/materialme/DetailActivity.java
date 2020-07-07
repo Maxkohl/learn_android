@@ -25,6 +25,4 @@ public class DetailActivity extends AppCompatActivity {
         Glide.with(this).load(intent.getIntExtra("image_resource",0)).into(sportsImage);
     }
 
-    public void resetSports(View view) {
-    }
 }
