@@ -18,10 +18,16 @@
     android:layout_height="wrap_content"
     android:layout_margin="8dp">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        >
+        
+        <ImageView
+            android:id="@+id/sportsImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true" />
 
         <TextView
             android:id="@+id/title"
@@ -29,7 +35,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:text="@string/title_placeholder" />
+            android:text="@string/title_placeholder"
+            android:layout_alignBottom="@id/sportsImage"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark"/>
 
         <TextView
             android:id="@+id/newsTitle"
@@ -37,7 +45,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:text="@string/news_placeholder" />
+            android:text="@string/news_placeholder"
+            android:layout_below="@id/sportsImage"
+            android:textColor="?android:textColorSecondary"/>
 
         <TextView
             android:id="@+id/subTitle"
@@ -45,7 +55,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:text="@string/sports_info_placeholder" />
+            android:text="@string/sports_info_placeholder"
+            android:layout_below="@id/newsTitle"/>
 
-    </LinearLayout>
+    </RelativeLayout>
 </android.support.v7.widget.CardView>
