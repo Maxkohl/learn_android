@@ -17,7 +17,7 @@ public class CustomReceiver extends BroadcastReceiver {
 
         //Check to see if intentAction isn't null
         if (intentAction != null) {
-            String toastMessage = "Uknown intent action";
+            String toastMessage = "Unknown intent action";
             //Switch statement of what to do with action
             switch (intentAction) {
                 case Intent.ACTION_POWER_CONNECTED:
@@ -25,6 +25,9 @@ public class CustomReceiver extends BroadcastReceiver {
                     break;
                 case Intent.ACTION_POWER_DISCONNECTED:
                     toastMessage = context.getString(R.string.toast_disconnected);
+                    break;
+                case Intent.ACTION_HEADSET_PLUG:
+                    toastMessage = context.getString(R.string.toast_headphones);
                     break;
                 case ACTION_CUSTOM_BROADCAST:
                     toastMessage = context.getString(R.string.custom_received);

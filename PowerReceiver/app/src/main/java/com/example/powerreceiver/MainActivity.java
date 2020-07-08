@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         //Add Intent actions to the intent filter
         filter.addAction(Intent.ACTION_POWER_DISCONNECTED);
         filter.addAction(Intent.ACTION_POWER_CONNECTED);
+        filter.addAction(Intent.ACTION_HEADSET_PLUG);
         //Register the receiver using activity context. Make sure to UNREGISTER in onDestroy
         this.registerReceiver(mReceiver, filter);
 
