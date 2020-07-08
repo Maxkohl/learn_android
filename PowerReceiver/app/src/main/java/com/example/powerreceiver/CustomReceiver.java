@@ -21,10 +21,13 @@ public class CustomReceiver extends BroadcastReceiver {
             //Switch statement of what to do with action
             switch (intentAction) {
                 case Intent.ACTION_POWER_CONNECTED:
-                    toastMessage = "Power is CONNECTED!";
+                    toastMessage = context.getString(R.string.toast_connected);
                     break;
                 case Intent.ACTION_POWER_DISCONNECTED:
-                    toastMessage = "Power is DISCONNECTED!";
+                    toastMessage = context.getString(R.string.toast_disconnected);
+                    break;
+                case ACTION_CUSTOM_BROADCAST:
+                    toastMessage = context.getString(R.string.custom_received);
                     break;
             }
             Toast.makeText(context, toastMessage, Toast.LENGTH_SHORT).show();

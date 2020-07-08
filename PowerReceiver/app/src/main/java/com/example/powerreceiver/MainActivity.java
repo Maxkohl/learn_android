@@ -30,12 +30,19 @@ public class MainActivity extends AppCompatActivity {
         //Register the receiver using activity context. Make sure to UNREGISTER in onDestroy
         this.registerReceiver(mReceiver, filter);
 
+        //Register receiver for LocalBroadcastManager
+        LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver,
+                new IntentFilter(ACTION_CUSTOM_BROADCAST));
+
 
     }
 
     @Override
     protected void onDestroy() {
         this.unregisterReceiver(mReceiver);
+
+        //Unregister receiver for Local Broadcast
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(mReceiver);
         super.onDestroy();
     }
 
