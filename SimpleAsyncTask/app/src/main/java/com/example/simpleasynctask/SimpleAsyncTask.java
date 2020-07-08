@@ -27,6 +27,12 @@ public class SimpleAsyncTask extends AsyncTask<Void, Void, String>{
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return "Awake after sleeping for " + s + " miliseconds!";
+        return "Awake after sleeping for " + s + " milliseconds!";
+    }
+
+    @Override
+    protected void onPostExecute(String s) {
+        mTextView.get().setText(s);
+        super.onPostExecute(s);
     }
 }
