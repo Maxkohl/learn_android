@@ -35,4 +35,6 @@ public class SimpleAsyncTask extends AsyncTask<Void, Void, String>{
         mTextView.get().setText(s);
         super.onPostExecute(s);
     }
+
+
 }
