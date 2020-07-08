@@ -1,6 +1,7 @@
 package com.example.powerreceiver;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -39,5 +40,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void sendCustomBroadcast(View view) {
+        //Create new intent with custom action string as an argument
+        Intent intent = new Intent(ACTION_CUSTOM_BROADCAST);
+        //Send local broadcast using LocalBroadcastManager
+        LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
+
     }
 }
