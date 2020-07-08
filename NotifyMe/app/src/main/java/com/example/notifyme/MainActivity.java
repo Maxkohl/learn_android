@@ -3,6 +3,7 @@ package com.example.notifyme;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,10 +16,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         button_notify = findViewById(R.id.notify);
+        button_notify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendNotification();
+            }
+        });
 
     }
 
     private void sendNotification() {
-        
+
     }
 }
