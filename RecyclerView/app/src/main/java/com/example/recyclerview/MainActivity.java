@@ -88,4 +88,8 @@ public class MainActivity extends AppCompatActivity {
         }
         return resultList;
     }
+
+    public int getListSize() {
+        return mWorldList.size();
+    }
 }
