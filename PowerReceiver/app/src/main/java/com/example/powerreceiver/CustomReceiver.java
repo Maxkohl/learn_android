@@ -3,13 +3,29 @@ package com.example.powerreceiver;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.widget.Toast;
 
 public class CustomReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        // TODO: This method is called when the BroadcastReceiver is receiving
-        // an Intent broadcast.
-        throw new UnsupportedOperationException("Not yet implemented");
+        //Get intent action of received broadcast
+        String intentAction = intent.getAction();
+
+        //Check to see if intentAction isn't null
+        if (intentAction != null) {
+            String toastMessage = "Uknown intent action";
+            //Switch statement of what to do with action
+            switch (intentAction) {
+                case Intent.ACTION_POWER_CONNECTED:
+                    toastMessage = "Power is CONNECTED!";
+                    break;
+                case Intent.ACTION_POWER_DISCONNECTED:
+                    toastMessage = "Power is DISCONNECTED!";
+                    break;
+
+            }
+            Toast.makeText(context, toastMessage, Toast.LENGTH_SHORT).show();
+        }
     }
 }
