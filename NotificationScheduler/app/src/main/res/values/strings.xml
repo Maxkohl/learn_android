@@ -8,4 +8,5 @@
     <string name="wifi">Wifi</string>
     <string name="schedule_job">Schedule Job</string>
     <string name="cancel_job">Cancel Job</string>
+    <string name="job_scheduled_notice">Job Scheduled. Job will run when constrains are met.</string>
 </resources>
