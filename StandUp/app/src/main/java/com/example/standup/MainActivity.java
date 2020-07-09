@@ -33,8 +33,10 @@ public class MainActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 String toastMessage;
                 if (isChecked) {
+                    deliverNotification(MainActivity.this);
                     toastMessage = getString(R.string.alarm_set_toast);
                 } else {
+                    mNotifyManager.cancelAll();
                     toastMessage = getString(R.string.alarm_disabled_toast);
                 }
                 Toast.makeText(MainActivity.this, toastMessage, Toast.LENGTH_SHORT).show();
@@ -65,5 +67,6 @@ public class MainActivity extends AppCompatActivity {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context,
                 NOTIFICATION_CHANNEL_ID).setSmallIcon(R.drawable.ic_standup).setContentTitle(
                 getString(R.string.standup_alert_title)).setContentText(getString(R.string.standup_alert_message)).setContentIntent(contentPendingIntent).setPriority(NotificationCompat.PRIORITY_HIGH).setDefaults(NotificationCompat.DEFAULT_ALL).setAutoCancel(true);
+        mNotifyManager.notify(NOTIFICATION_ID, builder.build());
     }
 }
