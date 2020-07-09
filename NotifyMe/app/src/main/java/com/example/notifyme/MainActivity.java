@@ -53,7 +53,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void sendNotification() {
-
+        NotificationCompat.Builder notifyBuilder = getNotificationBuilder();
+        mNotifyManager.notify(NOTIFICATION_ID, notifyBuilder.build());
 
     }
 
