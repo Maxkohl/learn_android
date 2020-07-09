@@ -86,7 +86,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         JobInfo jobInfo = builder.build();
-        boolean constraintSet = (selectedNetworkOption != JobInfo.NETWORK_TYPE_NONE) || mDeviceChargingSwitch.isChecked() || mDeviceIdleSwitch.isChecked() || seekBarSet;
+        boolean constraintSet =
+                (selectedNetworkOption != JobInfo.NETWORK_TYPE_NONE) || mDeviceChargingSwitch.isChecked() || mDeviceIdleSwitch.isChecked() || seekBarSet;
         if (constraintSet) {
             mScheduler.schedule(jobInfo);
             Toast.makeText(this, getString(R.string.job_scheduled_notice), Toast.LENGTH_SHORT).show();
