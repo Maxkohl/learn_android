@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -28,31 +29,34 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        final AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
+        Intent alarmIntent = new Intent(this, AlarmReceiver.class);
+        final PendingIntent alarmPendingIntent = PendingIntent.getBroadcast(this, NOTIFICATION_ID,
+                alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
         ToggleButton alarmToggle = findViewById(R.id.alarmToggle);
+        mNotifyManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        createNotificationChannel();
+
         alarmToggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
-                String toastMessage;
+                String toastMessage = "Toast";
                 if (isChecked) {
-                    deliverNotification(MainActivity.this);
-                    toastMessage = getString(R.string.alarm_set_toast);
+                    if (alarmManager != null) {
+                        alarmManager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), AlarmManager.INTERVAL_FIFTEEN_MINUTES, alarmPendingIntent);
+                        toastMessage = getString(R.string.alarm_set_toast);
+                    }
                 } else {
+                    if (alarmManager != null) {
+                        alarmManager.cancel(alarmPendingIntent);
+                    }
                     mNotifyManager.cancelAll();
                     toastMessage = getString(R.string.alarm_disabled_toast);
                 }
                 Toast.makeText(MainActivity.this, toastMessage, Toast.LENGTH_SHORT).show();
             }
         });
-
-        Intent alarmIntent = new Intent(this, AlarmReceiver.class);
-        PendingIntent alarmPendingIntent = PendingIntent.getActivity(this, NOTIFICATION_ID,
-                alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-
-        AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
-        
-
-        mNotifyManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        createNotificationChannel();
     }
 
     private void createNotificationChannel() {

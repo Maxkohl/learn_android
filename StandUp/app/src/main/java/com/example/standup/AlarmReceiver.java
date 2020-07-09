@@ -23,12 +23,11 @@ public class AlarmReceiver extends BroadcastReceiver {
 
     public void deliverNotification(Context context) {
         Intent contentIntent = new Intent(context, MainActivity.class);
-        PendingIntent contentPendingIntent = PendingIntent.getActivity(context, NOTIFICATION_ID,
-                contentIntent, PendingIntent.FLAG_UPDATE_CURRENT
-        );
+        PendingIntent contentPendingIntent = PendingIntent.getBroadcast(context, NOTIFICATION_ID,
+                contentIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context,
                 NOTIFICATION_CHANNEL_ID).setSmallIcon(R.drawable.ic_standup).setContentTitle(
-                getString(R.string.standup_alert_title)).setContentText(getString(R.string.standup_alert_message)).setContentIntent(contentPendingIntent).setPriority(NotificationCompat.PRIORITY_HIGH).setAutoCancel(true).setDefaults(NotificationCompat.DEFAULT_ALL);
-        mNotifyManager.notify(NOTIFICATION_ID, builder.build());
+                context.getString(R.string.standup_alert_title)).setContentText(context.getString(R.string.standup_alert_message)).setContentIntent(contentPendingIntent).setPriority(NotificationCompat.PRIORITY_HIGH).setAutoCancel(true).setDefaults(NotificationCompat.DEFAULT_ALL);
+        mNotificationManager.notify(NOTIFICATION_ID, builder.build());
     }
 }
