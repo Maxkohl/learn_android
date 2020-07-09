@@ -1,9 +1,13 @@
 package com.example.standup;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -51,5 +55,15 @@ public class MainActivity extends AppCompatActivity {
             mNotifyManager.createNotificationChannel(notifyChannel);
 
         }
+    }
+
+    public void deliverNotification(Context context) {
+        Intent contentIntent = new Intent(context, MainActivity.class);
+        PendingIntent contentPendingIntent = PendingIntent.getActivity(context, NOTIFICATION_ID,
+                contentIntent, PendingIntent.FLAG_UPDATE_CURRENT
+        );
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context,
+                NOTIFICATION_CHANNEL_ID).setSmallIcon(R.drawable.ic_standup).setContentTitle(
+                getString(R.string.standup_alert_title)).setContentText(getString(R.string.standup_alert_message)).setContentIntent(contentPendingIntent).setPriority(NotificationCompat.PRIORITY_HIGH).setDefaults(NotificationCompat.DEFAULT_ALL).setAutoCancel(true);
     }
 }
