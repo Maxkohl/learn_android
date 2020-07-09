@@ -52,4 +52,13 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, getString(R.string.job_scheduled_notice), Toast.LENGTH_SHORT).show();
 
     }
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public void cancelJobs() {
+        if (mScheduler != null) {
+            mScheduler.cancelAll();
+            mScheduler = null;
+            Toast.makeText(this, R.string.job_cancelled_notice,Toast.LENGTH_SHORT).show();
+        }
+    }
 }

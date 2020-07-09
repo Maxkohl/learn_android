@@ -9,4 +9,5 @@
     <string name="schedule_job">Schedule Job</string>
     <string name="cancel_job">Cancel Job</string>
     <string name="job_scheduled_notice">Job Scheduled. Job will run when constrains are met.</string>
+    <string name="job_cancelled_notice">Job cancelled</string>
 </resources>
