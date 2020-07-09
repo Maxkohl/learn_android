@@ -47,8 +47,14 @@ public class MainActivity extends AppCompatActivity {
         builder.setRequiredNetworkType(selectedNetworkOption);
 
         JobInfo jobInfo = builder.build();
-        mScheduler.schedule(jobInfo);
-        Toast.makeText(this, getString(R.string.job_scheduled_notice), Toast.LENGTH_SHORT).show();
+        boolean constraintSet = selectedNetworkOption != JobInfo.NETWORK_TYPE_NONE;
+        if (constraintSet) {
+            mScheduler.schedule(jobInfo);
+            Toast.makeText(this, getString(R.string.job_scheduled_notice), Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Please set at least one constraint.", Toast.LENGTH_SHORT).show();
+        }
+
 
     }
 
