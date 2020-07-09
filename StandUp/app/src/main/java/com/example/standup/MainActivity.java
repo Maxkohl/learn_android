@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         mNotifyManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        createNotificationChannel();
     }
 
     private void createNotificationChannel() {
@@ -55,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
             notifyChannel.enableVibration(true);
             notifyChannel.setDescription("Notifies every 15 minutes to stand up and walk around.");
             mNotifyManager.createNotificationChannel(notifyChannel);
-
         }
     }
 
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         );
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context,
                 NOTIFICATION_CHANNEL_ID).setSmallIcon(R.drawable.ic_standup).setContentTitle(
-                getString(R.string.standup_alert_title)).setContentText(getString(R.string.standup_alert_message)).setContentIntent(contentPendingIntent).setPriority(NotificationCompat.PRIORITY_HIGH).setDefaults(NotificationCompat.DEFAULT_ALL).setAutoCancel(true);
+                getString(R.string.standup_alert_title)).setContentText(getString(R.string.standup_alert_message)).setContentIntent(contentPendingIntent).setPriority(NotificationCompat.PRIORITY_HIGH).setAutoCancel(true).setDefaults(NotificationCompat.DEFAULT_ALL);
         mNotifyManager.notify(NOTIFICATION_ID, builder.build());
     }
 }
