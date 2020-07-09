@@ -42,8 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
-        ComponentName serviceName = new ComponentName(getPackageName(),
-                NotificationJobService.class.getName());
+        ComponentName serviceName = new ComponentName(getPackageName(), NotificationJobService.class.getName());
         JobInfo.Builder builder = new JobInfo.Builder(JOB_ID, serviceName);
         builder.setRequiredNetworkType(selectedNetworkOption);
 
