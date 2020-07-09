@@ -5,6 +5,8 @@ import androidx.core.app.NotificationCompat;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaSession2Service;
 import android.os.Build;
@@ -53,17 +55,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void sendNotification() {
+        //Use getNotificationBuilder to create builder in method
         NotificationCompat.Builder notifyBuilder = getNotificationBuilder();
+        //Use manager to notify (send notification) with the ID and the builder method
         mNotifyManager.notify(NOTIFICATION_ID, notifyBuilder.build());
 
     }
 
     //Helper class that builds Notification Builder for you
     private NotificationCompat.Builder getNotificationBuilder() {
+        //Create intent to be used when user clicks notification action
+        Intent intent = new Intent(this, MainActivity.class);
+        //Wrap that intent in a PendingIntent
+        PendingIntent notifyPendingIntent = PendingIntent.getActivity(this, NOTIFICATION_ID, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+
         NotificationCompat.Builder notifyBuilder = new NotificationCompat.Builder(this,
                 PRIMARY_CHANNEL_ID);
         notifyBuilder.setContentTitle("You have been notified!").setContentText("This is your " +
                 "notification text.").setSmallIcon(R.drawable.ic_android);
+
+        //Set PendingIntent on action in notification builder
+        notifyBuilder.setContentIntent(notifyPendingIntent).setAutoCancel(true);
+
         return notifyBuilder;
     }
 }
