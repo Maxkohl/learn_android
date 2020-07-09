@@ -6,7 +6,10 @@ import androidx.core.app.NotificationCompat;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -20,7 +23,10 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String PRIMARY_CHANNEL_ID = "primary_notification_channel";
     private static final int NOTIFICATION_ID = 0;
+    private static final String ACTION_UPDATE_NOTIFICATION = "com.example.android.notifyme" +
+            ".ACTION_UPDATE_NOTIFICATION";
     private NotificationManager mNotifyManager;
+    private NotificationReceiver mReceiver = new NotificationReceiver();
 
     private Button button_notify;
     private Button button_update;
@@ -55,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
 
         //Create channel in onCreate or app crashes!
         createNotificationChannel();
+        //Registered received for getting broadcast of update action button tapped in notification
+        registerReceiver(mReceiver, new IntentFilter(ACTION_UPDATE_NOTIFICATION));
         setNotificationButtonState(true, false, false);
     }
 
@@ -70,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         //Change style by setting it again
         notifyBuilder.setStyle(new NotificationCompat.BigPictureStyle().bigPicture(androidImage).setBigContentTitle("Notification updated!"));
         mNotifyManager.notify(NOTIFICATION_ID, notifyBuilder.build());
-        setNotificationButtonState(false,true, true);
+        setNotificationButtonState(false, true, true);
     }
 
     public void createNotificationChannel() {
@@ -120,9 +128,24 @@ public class MainActivity extends AppCompatActivity {
         return notifyBuilder;
     }
 
-    void setNotificationButtonState(boolean isNotifyEnabled, boolean isUpdateEnabled, boolean isCancelEnabled) {
+    void setNotificationButtonState(boolean isNotifyEnabled, boolean isUpdateEnabled,
+                                    boolean isCancelEnabled) {
         button_notify.setEnabled(isNotifyEnabled);
         button_update.setEnabled(isUpdateEnabled);
         button_cancel.setEnabled(isCancelEnabled);
+    }
+
+    public class NotificationReceiver extends BroadcastReceiver {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            updateNotification();
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        unregisterReceiver(mReceiver);
+        super.onDestroy();
     }
 }
