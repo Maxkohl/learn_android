@@ -3,6 +3,7 @@ package com.example.standup;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 
+import android.app.AlarmManager;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -17,7 +18,7 @@ import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity {
 
-    private NotificationManager mNotifyManager;
+    public NotificationManager mNotifyManager;
 
     private final static int NOTIFICATION_ID = 0;
     private final static String NOTIFICATION_CHANNEL_ID = "primary_notification_channel";
@@ -43,6 +44,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Intent alarmIntent = new Intent(this, AlarmReceiver.class);
+        PendingIntent alarmPendingIntent = PendingIntent.getActivity(this, NOTIFICATION_ID,
+                alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
+        
+
         mNotifyManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         createNotificationChannel();
     }
@@ -59,14 +67,5 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void deliverNotification(Context context) {
-        Intent contentIntent = new Intent(context, MainActivity.class);
-        PendingIntent contentPendingIntent = PendingIntent.getActivity(context, NOTIFICATION_ID,
-                contentIntent, PendingIntent.FLAG_UPDATE_CURRENT
-        );
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(context,
-                NOTIFICATION_CHANNEL_ID).setSmallIcon(R.drawable.ic_standup).setContentTitle(
-                getString(R.string.standup_alert_title)).setContentText(getString(R.string.standup_alert_message)).setContentIntent(contentPendingIntent).setPriority(NotificationCompat.PRIORITY_HIGH).setAutoCancel(true).setDefaults(NotificationCompat.DEFAULT_ALL);
-        mNotifyManager.notify(NOTIFICATION_ID, builder.build());
-    }
+
 }
