@@ -10,17 +10,23 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioGroup;
+import android.widget.Switch;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     private JobScheduler mScheduler;
     private static final int JOB_ID = 0;
+    private Switch mDeviceIdleSwitch;
+    private Switch mDeviceChargingSwitch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mDeviceIdleSwitch = findViewById(R.id.idleSwitch);
+        mDeviceChargingSwitch = findViewById(R.id.chargingSwitch);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -42,12 +48,13 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
-        ComponentName serviceName = new ComponentName(getPackageName(), NotificationJobService.class.getName());
+        ComponentName serviceName = new ComponentName(getPackageName(),
+                NotificationJobService.class.getName());
         JobInfo.Builder builder = new JobInfo.Builder(JOB_ID, serviceName);
-        builder.setRequiredNetworkType(selectedNetworkOption);
+        builder.setRequiredNetworkType(selectedNetworkOption).setRequiresDeviceIdle(mDeviceIdleSwitch.isChecked()).setRequiresCharging(mDeviceChargingSwitch.isChecked());
 
         JobInfo jobInfo = builder.build();
-        boolean constraintSet = selectedNetworkOption != JobInfo.NETWORK_TYPE_NONE;
+        boolean constraintSet = (selectedNetworkOption != JobInfo.NETWORK_TYPE_NONE) || mDeviceChargingSwitch.isChecked() || mDeviceIdleSwitch.isChecked();
         if (constraintSet) {
             mScheduler.schedule(jobInfo);
             Toast.makeText(this, getString(R.string.job_scheduled_notice), Toast.LENGTH_SHORT).show();
@@ -59,11 +66,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    public void cancelJobs() {
+    public void cancelJobs(View view) {
         if (mScheduler != null) {
             mScheduler.cancelAll();
             mScheduler = null;
-            Toast.makeText(this, R.string.job_cancelled_notice,Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.job_cancelled_notice, Toast.LENGTH_SHORT).show();
         }
     }
 }

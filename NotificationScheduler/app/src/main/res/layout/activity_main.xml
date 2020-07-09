@@ -85,7 +85,8 @@
         android:layout_height="wrap_content"
         android:text="@string/cancel_job"
         android:layout_gravity="center_horizontal"
-        android:layout_margin="@dimen/standard_margin"/>
+        android:layout_margin="@dimen/standard_margin"
+        android:onClick="cancelJobs"/>
 
 
 
