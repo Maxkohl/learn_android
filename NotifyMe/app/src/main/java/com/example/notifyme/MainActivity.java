@@ -67,7 +67,8 @@ public class MainActivity extends AppCompatActivity {
         //Create intent to be used when user clicks notification action
         Intent intent = new Intent(this, MainActivity.class);
         //Wrap that intent in a PendingIntent
-        PendingIntent notifyPendingIntent = PendingIntent.getActivity(this, NOTIFICATION_ID, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent notifyPendingIntent = PendingIntent.getActivity(this, NOTIFICATION_ID,
+                intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
 
         NotificationCompat.Builder notifyBuilder = new NotificationCompat.Builder(this,
@@ -77,6 +78,9 @@ public class MainActivity extends AppCompatActivity {
 
         //Set PendingIntent on action in notification builder
         notifyBuilder.setContentIntent(notifyPendingIntent).setAutoCancel(true);
+
+        //For backwards compatibility, set priorty and defaults
+        notifyBuilder.setPriority(NotificationCompat.PRIORITY_HIGH).setDefaults(NotificationCompat.DEFAULT_ALL);
 
         return notifyBuilder;
     }
