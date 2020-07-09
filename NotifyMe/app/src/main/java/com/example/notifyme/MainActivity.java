@@ -55,10 +55,12 @@ public class MainActivity extends AppCompatActivity {
 
         //Create channel in onCreate or app crashes!
         createNotificationChannel();
+        setNotificationButtonState(true, false, false);
     }
 
     private void cancelNotification() {
         mNotifyManager.cancel(NOTIFICATION_ID);
+        setNotificationButtonState(true, false, false);
     }
 
     private void updateNotification() {
@@ -68,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
         //Change style by setting it again
         notifyBuilder.setStyle(new NotificationCompat.BigPictureStyle().bigPicture(androidImage).setBigContentTitle("Notification updated!"));
         mNotifyManager.notify(NOTIFICATION_ID, notifyBuilder.build());
+        setNotificationButtonState(false,true, true);
     }
 
     public void createNotificationChannel() {
@@ -90,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
         NotificationCompat.Builder notifyBuilder = getNotificationBuilder();
         //Use manager to notify (send notification) with the ID and the builder method
         mNotifyManager.notify(NOTIFICATION_ID, notifyBuilder.build());
+        setNotificationButtonState(false, true, true);
 
     }
 
@@ -114,5 +118,11 @@ public class MainActivity extends AppCompatActivity {
         notifyBuilder.setPriority(NotificationCompat.PRIORITY_HIGH).setDefaults(NotificationCompat.DEFAULT_ALL);
 
         return notifyBuilder;
+    }
+
+    void setNotificationButtonState(boolean isNotifyEnabled, boolean isUpdateEnabled, boolean isCancelEnabled) {
+        button_notify.setEnabled(isNotifyEnabled);
+        button_update.setEnabled(isUpdateEnabled);
+        button_cancel.setEnabled(isCancelEnabled);
     }
 }
