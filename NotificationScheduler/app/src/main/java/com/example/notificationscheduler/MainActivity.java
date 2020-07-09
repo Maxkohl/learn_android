@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
             mScheduler.schedule(jobInfo);
             Toast.makeText(this, getString(R.string.job_scheduled_notice), Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this, "Please set at least one constraint.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.please_set_constraint_notice, Toast.LENGTH_SHORT).show();
         }
 
 
