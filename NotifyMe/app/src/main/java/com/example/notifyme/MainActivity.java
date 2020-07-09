@@ -97,8 +97,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void sendNotification() {
+        //Create intent to go with update notification action
+        Intent intent = new Intent(ACTION_UPDATE_NOTIFICATION);
+        //Wrap intent in PendingIntent that get's the BROADCAST
+        PendingIntent updatePendingIntent = PendingIntent.getBroadcast(this, NOTIFICATION_ID,
+                intent, PendingIntent.FLAG_ONE_SHOT);
+
         //Use getNotificationBuilder to create builder in method
         NotificationCompat.Builder notifyBuilder = getNotificationBuilder();
+        //Add update notification action to builder
+        notifyBuilder.addAction(R.drawable.ic_update, "Update Notification", updatePendingIntent);
+
         //Use manager to notify (send notification) with the ID and the builder method
         mNotifyManager.notify(NOTIFICATION_ID, notifyBuilder.build());
         setNotificationButtonState(false, true, true);
@@ -124,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
 
         //For backwards compatibility, set priorty and defaults
         notifyBuilder.setPriority(NotificationCompat.PRIORITY_HIGH).setDefaults(NotificationCompat.DEFAULT_ALL);
+
 
         return notifyBuilder;
     }
