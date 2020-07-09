@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
@@ -40,10 +41,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/wifi"/>
-
-
-
     </RadioGroup>
+
+    <Button
+        android:id="@+id/scheduleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/schedule_job"
+        android:onClick="scheduleJob"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/standard_margin"/>
+    <Button
+        android:id="@+id/cancelButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel_job"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/standard_margin"/>
 
 
 </LinearLayout>
