@@ -25,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
     private static final int NOTIFICATION_ID = 0;
     private static final String ACTION_UPDATE_NOTIFICATION = "com.example.android.notifyme" +
             ".ACTION_UPDATE_NOTIFICATION";
+    private static final String ACTION_SWIPE_DISMISS = "com.example.android.notifyme" +
+            ".ACTION_SWIPE_DISMISS";
+
     private NotificationManager mNotifyManager;
     private NotificationReceiver mReceiver = new NotificationReceiver();
 
@@ -59,10 +62,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(ACTION_UPDATE_NOTIFICATION);
+        filter.addAction(ACTION_SWIPE_DISMISS);
+
         //Create channel in onCreate or app crashes!
         createNotificationChannel();
         //Registered received for getting broadcast of update action button tapped in notification
-        registerReceiver(mReceiver, new IntentFilter(ACTION_UPDATE_NOTIFICATION));
+        registerReceiver(mReceiver, filter);
         setNotificationButtonState(true, false, false);
     }
 
@@ -131,6 +138,12 @@ public class MainActivity extends AppCompatActivity {
         //Set PendingIntent on action in notification builder
         notifyBuilder.setContentIntent(notifyPendingIntent).setAutoCancel(true);
 
+        Intent dismissIntent = new Intent(ACTION_SWIPE_DISMISS);
+        PendingIntent dismissPendingIntent = PendingIntent.getBroadcast(this, NOTIFICATION_ID,
+                dismissIntent, PendingIntent.FLAG_ONE_SHOT);
+        notifyBuilder.setDeleteIntent(dismissPendingIntent);
+
+
         //For backwards compatibility, set priorty and defaults
         notifyBuilder.setPriority(NotificationCompat.PRIORITY_HIGH).setDefaults(NotificationCompat.DEFAULT_ALL);
 
@@ -149,7 +162,12 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onReceive(Context context, Intent intent) {
-            updateNotification();
+            if (intent.getAction().equals(ACTION_UPDATE_NOTIFICATION)) {
+                updateNotification();
+            }
+            if (intent.getAction().equals(ACTION_SWIPE_DISMISS)) {
+                cancelNotification();
+            }
         }
     }
 
