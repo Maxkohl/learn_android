@@ -2,12 +2,18 @@ package com.example.standup;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.NotificationManager;
 import android.os.Bundle;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity {
+
+    private NotificationManager mNotifyManager;
+
+    private final static int NOTIFICATION_ID = 0;
+    private final static String NOTIFICATION_CHANNEL_ID = "primary_notification_channel";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,5 +33,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, toastMessage, Toast.LENGTH_SHORT).show();
             }
         });
+
+        mNotifyManager = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
     }
 }
