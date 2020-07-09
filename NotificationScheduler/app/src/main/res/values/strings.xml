@@ -2,4 +2,8 @@
     <string name="app_name">Notification Scheduler</string>
     <string name="job_notification_title">Job Service</string>
     <string name="job_notification_text">Your Job is running!</string>
+    <string name="network_type_required">Network Type Required:</string>
+    <string name="none">None</string>
+    <string name="any">Any</string>
+    <string name="wifi">Wifi</string>
 </resources>
