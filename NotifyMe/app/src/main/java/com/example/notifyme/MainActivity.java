@@ -7,6 +7,8 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.media.MediaSession2Service;
 import android.os.Build;
@@ -56,9 +58,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void cancelNotification() {
+        mNotifyManager.cancel(NOTIFICATION_ID);
     }
 
     private void updateNotification() {
+        //Convert image to BitMap
+        Bitmap androidImage = BitmapFactory.decodeResource(getResources(), R.drawable.mascot_1);
+        NotificationCompat.Builder notifyBuilder = getNotificationBuilder();
+        //Change style by setting it again
+        notifyBuilder.setStyle(new NotificationCompat.BigPictureStyle().bigPicture(androidImage).setBigContentTitle("Notification updated!"));
+        mNotifyManager.notify(NOTIFICATION_ID, notifyBuilder.build());
     }
 
     public void createNotificationChannel() {
