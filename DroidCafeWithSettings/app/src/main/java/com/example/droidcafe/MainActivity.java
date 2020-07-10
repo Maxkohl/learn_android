@@ -1,14 +1,14 @@
 package com.example.droidcafe;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.preference.PreferenceManager;
 
 import android.view.View;
 
@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String EXTRA_MESSAGE = "com.example.android.droidcafe.extra.MESSAGE";
     private String mOrderMessage;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,20 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        PreferenceManager.setDefaultValues(this,
+                R.xml.header_preferences, false);
+        PreferenceManager.setDefaultValues(this,
+                R.xml.account_prefs, false);
+        PreferenceManager.setDefaultValues(this,
+                R.xml.markets_pref, false);
+
+        SharedPreferences sharedPref = PreferenceManager
+                .getDefaultSharedPreferences(this);
+        String marketPref = sharedPref
+                .getString("market_choice", "-1");
+        displayToast(marketPref);
+
     }
 
     @Override
