@@ -37,15 +37,11 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     // Current count
     private int mCount = 0;
-    // Current background color
-    private int mColor;
     // Text view to display both count and color
     private TextView mShowCountTextView;
 
     // Key for current count
     private final String COUNT_KEY = "count";
-    // Key for current color
-    private final String COLOR_KEY = "color";
 
     //Shared preference and shared preference name reference
     private SharedPreferences mSharedPreferences;
@@ -59,8 +55,6 @@ public class MainActivity extends AppCompatActivity {
 
         // Initialize views, color
         mShowCountTextView = findViewById(R.id.count_textview);
-        mColor = ContextCompat.getColor(this,
-                R.color.default_background);
 
         //Initialize shared preference
         mSharedPreferences = getSharedPreferences(mSharedPrefFile, MODE_PRIVATE);
@@ -68,8 +62,6 @@ public class MainActivity extends AppCompatActivity {
         // Restore the saved instance state.
         mCount = mSharedPreferences.getInt(COUNT_KEY, 0);
         mShowCountTextView.setText(String.format("%s", mCount));
-        mColor = mSharedPreferences.getInt(COLOR_KEY, mColor);
-        mShowCountTextView.setBackgroundColor(mColor);
 
 
     }
@@ -80,22 +72,9 @@ public class MainActivity extends AppCompatActivity {
         //Get editor for Shared Preferences
         SharedPreferences.Editor editor = mSharedPreferences.edit();
         editor.putInt(COUNT_KEY, mCount);
-        editor.putInt(COLOR_KEY, mColor);
         editor.apply();
     }
 
-    /**
-     * Handles the onClick for the background color buttons. Gets background
-     * color of the button that was clicked, and sets the TextView background
-     * to that color.
-     *
-     * @param view The view (Button) that was clicked.
-     */
-    public void changeBackground(View view) {
-        int color = ((ColorDrawable) view.getBackground()).getColor();
-        mShowCountTextView.setBackgroundColor(color);
-        mColor = color;
-    }
 
     /**
      * Handles the onClick for the Count button. Increments the value of the
@@ -120,7 +99,6 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
 
         outState.putInt(COUNT_KEY, mCount);
-        outState.putInt(COLOR_KEY, mColor);
     }
 
     /**
@@ -134,11 +112,6 @@ public class MainActivity extends AppCompatActivity {
         // Reset count
         mCount = 0;
         mShowCountTextView.setText(String.format("%s", mCount));
-
-        // Reset color
-        mColor = ContextCompat.getColor(this,
-                R.color.default_background);
-        mShowCountTextView.setBackgroundColor(mColor);
 
         //Resets preferences stored
         SharedPreferences.Editor editor = mSharedPreferences.edit();
