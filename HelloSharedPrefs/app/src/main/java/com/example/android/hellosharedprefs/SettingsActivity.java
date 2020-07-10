@@ -1,5 +1,8 @@
 package com.example.android.hellosharedprefs;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v4.content.ContextCompat;
@@ -15,6 +18,7 @@ public class SettingsActivity extends AppCompatActivity {
     private TextView mShowCountTextView;
     private final String COLOR_KEY = "color";
     private SharedPreferences mSharedPreferences;
+    private String mSharedPrefFile = "com.example.android.hellosharedsprefs";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,20 +26,14 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
 
         mShowCountTextView = findViewById(R.id.count_textview);
-        mSharedPreferences = getPreferences(MODE_PRIVATE);
+        mSharedPreferences = getSharedPreferences(mSharedPrefFile, MODE_PRIVATE);
         mColor = ContextCompat.getColor(this,
                 R.color.default_background);
-
-        mColor = mSharedPreferences.getInt(COLOR_KEY, mColor);
-        mShowCountTextView.setBackgroundColor(mColor);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        SharedPreferences.Editor editor = mSharedPreferences.edit();
-        editor.putInt(COLOR_KEY, mColor);
-        editor.apply();
     }
 
     /**
@@ -46,9 +44,8 @@ public class SettingsActivity extends AppCompatActivity {
      * @param view The view (Button) that was clicked.
      */
     public void changeBackground(View view) {
-        int color = ((ColorDrawable) view.getBackground()).getColor();
-        mShowCountTextView.setBackgroundColor(color);
-        mColor = color;
+        mColor = ((ColorDrawable) view.getBackground()).getColor();
+
     }
 
     public void resetSettings(View view) {
@@ -61,5 +58,14 @@ public class SettingsActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = mSharedPreferences.edit();
         editor.clear();
         editor.apply();
+    }
+
+    public void saveSettings(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        SharedPreferences.Editor editor = mSharedPreferences.edit();
+        editor.putInt(COLOR_KEY, mColor);
+        editor.apply();
+
+        startActivity(intent);
     }
 }

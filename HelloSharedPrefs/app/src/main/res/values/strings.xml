@@ -36,4 +36,5 @@ limitations under the License. -->
     <!-- Button label for Reset button -->
     <string name="reset_button">Reset</string>
     <string name="settings">Settings</string>
+    <string name="save_settings">Save Settings</string>
 </resources>

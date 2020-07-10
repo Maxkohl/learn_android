@@ -37,11 +37,13 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     // Current count
     private int mCount = 0;
+    private int mColor;
     // Text view to display both count and color
     private TextView mShowCountTextView;
 
     // Key for current count
     private final String COUNT_KEY = "count";
+    private final String COLOR_KEY = "color";
 
     //Shared preference and shared preference name reference
     private SharedPreferences mSharedPreferences;
@@ -59,10 +61,15 @@ public class MainActivity extends AppCompatActivity {
         //Initialize shared preference
         mSharedPreferences = getSharedPreferences(mSharedPrefFile, MODE_PRIVATE);
 
+        mColor = ContextCompat.getColor(this,
+                R.color.default_background);
+
+        mColor = mSharedPreferences.getInt(COLOR_KEY, mColor);
+        mShowCountTextView.setBackgroundColor(mColor);
+
         // Restore the saved instance state.
         mCount = mSharedPreferences.getInt(COUNT_KEY, 0);
         mShowCountTextView.setText(String.format("%s", mCount));
-
 
     }
 
