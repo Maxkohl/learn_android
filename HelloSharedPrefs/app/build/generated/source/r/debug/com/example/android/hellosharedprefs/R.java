@@ -3178,10 +3178,11 @@ public final class R {
     public static final int green_button=0x7f0b0022;
     public static final int red_button=0x7f0b0023;
     public static final int reset_button=0x7f0b0024;
-    public static final int save_settings=0x7f0b0025;
-    public static final int search_menu_title=0x7f0b0026;
-    public static final int settings=0x7f0b0027;
-    public static final int status_bar_notification_info_overflow=0x7f0b0028;
+    public static final int reset_settings=0x7f0b0025;
+    public static final int save_settings=0x7f0b0026;
+    public static final int search_menu_title=0x7f0b0027;
+    public static final int settings=0x7f0b0028;
+    public static final int status_bar_notification_info_overflow=0x7f0b0029;
   }
   public static final class style {
     public static final int AlertDialog_AppCompat=0x7f0c0000;

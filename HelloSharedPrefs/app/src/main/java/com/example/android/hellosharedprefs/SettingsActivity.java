@@ -15,7 +15,6 @@ public class SettingsActivity extends AppCompatActivity {
 
     private int mColor;
     // Text view to display both count and color
-    private TextView mShowCountTextView;
     private final String COLOR_KEY = "color";
     private SharedPreferences mSharedPreferences;
     private String mSharedPrefFile = "com.example.android.hellosharedsprefs";
@@ -25,7 +24,6 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        mShowCountTextView = findViewById(R.id.count_textview);
         mSharedPreferences = getSharedPreferences(mSharedPrefFile, MODE_PRIVATE);
         mColor = ContextCompat.getColor(this,
                 R.color.default_background);
@@ -45,19 +43,18 @@ public class SettingsActivity extends AppCompatActivity {
      */
     public void changeBackground(View view) {
         mColor = ((ColorDrawable) view.getBackground()).getColor();
-
     }
 
     public void resetSettings(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
         // Reset color
         mColor = ContextCompat.getColor(this,
                 R.color.default_background);
-        mShowCountTextView.setBackgroundColor(mColor);
-
         //Resets preferences stored
         SharedPreferences.Editor editor = mSharedPreferences.edit();
-        editor.clear();
+        editor.putInt(COLOR_KEY, mColor);
         editor.apply();
+        startActivity(intent);
     }
 
     public void saveSettings(View view) {
