@@ -19,7 +19,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+       android:paddingTop="24dp">
     <Button
         android:id="@+id/black_background_button"
         style="@style/AppTheme.Button.Colored"
@@ -28,6 +29,8 @@
         android:background="@android:color/black"
         android:onClick="changeBackground"
         android:text="@string/black_button"
+        android:layout_marginEnd="@dimen/standard_margin"
+        android:layout_marginRight="@dimen/standard_margin"
         app:layout_constraintBottom_toTopOf="@+id/guideline_lower"
         app:layout_constraintEnd_toStartOf="@+id/red_background_button"
         app:layout_constraintHorizontal_chainStyle="packed"
@@ -42,6 +45,8 @@
         android:background="@color/red_background"
         android:onClick="changeBackground"
         android:text="@string/red_button"
+        android:layout_marginEnd="@dimen/standard_margin"
+        android:layout_marginRight="@dimen/standard_margin"
         app:layout_constraintBottom_toTopOf="@+id/guideline_lower"
         app:layout_constraintEnd_toStartOf="@+id/blue_background_button"
         app:layout_constraintStart_toEndOf="@+id/black_background_button"
@@ -55,6 +60,8 @@
         android:background="@color/blue_background"
         android:onClick="changeBackground"
         android:text="@string/blue_button"
+        android:layout_marginEnd="@dimen/standard_margin"
+        android:layout_marginRight="@dimen/standard_margin"
         app:layout_constraintBottom_toTopOf="@+id/guideline_lower"
         app:layout_constraintEnd_toStartOf="@+id/green_background_button"
         app:layout_constraintStart_toEndOf="@+id/red_background_button"
