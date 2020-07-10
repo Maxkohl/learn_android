@@ -64,6 +64,10 @@ public class MainActivity extends AppCompatActivity {
             case (R.id.action_contact):
                 displayToast(getString(R.string.action_contact_message));
                 break;
+            case (R.id.action_settings):
+                Intent settingsIntent = new Intent(this, SettingsActivity.class);
+                startActivity(settingsIntent);
+                break;
         }
 
         return super.onOptionsItemSelected(item);
