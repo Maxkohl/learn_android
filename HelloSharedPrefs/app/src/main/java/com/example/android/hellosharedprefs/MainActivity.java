@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = mSharedPreferences.edit();
         editor.putInt(COUNT_KEY, mCount);
         editor.putInt(COLOR_KEY, mColor);
-
+        editor.apply();
     }
 
     /**
