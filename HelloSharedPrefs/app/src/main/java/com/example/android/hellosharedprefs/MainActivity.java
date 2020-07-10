@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Resets preferences stored
         SharedPreferences.Editor editor = mSharedPreferences.edit();
-        editor.clear();
+        editor.putInt(COUNT_KEY, mCount);
         editor.apply();
     }
 
