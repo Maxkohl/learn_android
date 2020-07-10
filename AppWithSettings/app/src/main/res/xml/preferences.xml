@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:defaultValue="true"
+    android:key="example_switch"
+    android:summary="Turn this option on or off"
+    android:title="Settings option">
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="switch_preference_1"
+        android:summary="@string/switch_summary"
+        android:title="@string/switch_title" />
 
 </PreferenceScreen>
