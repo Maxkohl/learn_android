@@ -625,6 +625,7 @@
     <string name="abc_shareactionprovider_share_with_application">Share with <ns1:g example="Mail" id="application_name">%s</ns1:g></string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="app_name">HelloSharedPrefs</string>
+    <string name="background_color">Background Color:</string>
     <string name="black_button">Black</string>
     <string name="blue_button">Blue</string>
     <string name="count_button">Count</string>
