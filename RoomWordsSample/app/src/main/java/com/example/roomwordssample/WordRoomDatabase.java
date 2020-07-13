@@ -12,7 +12,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 @Database(entities = {Word.class}, version = 1, exportSchema = false)
 public abstract class WordRoomDatabase extends RoomDatabase {
 
-    public WordDao wordDao;
+    public abstract WordDao wordDao();
 
     private static WordRoomDatabase INSTANCE;
 
@@ -32,7 +32,6 @@ public abstract class WordRoomDatabase extends RoomDatabase {
     }
 
     private static RoomDatabase.Callback sRoomDatabaseCallback = new RoomDatabase.Callback() {
-
         @Override
         public void onOpen(@NonNull SupportSQLiteDatabase db) {
             super.onOpen(db);
@@ -47,7 +46,7 @@ public abstract class WordRoomDatabase extends RoomDatabase {
         String[] words = {"Cat", "Dog", "Chicken"};
 
         private PopulateDbAsync(WordRoomDatabase db) {
-            this.wordDao = db.wordDao;
+            this.wordDao = db.wordDao();
         }
 
         @Override

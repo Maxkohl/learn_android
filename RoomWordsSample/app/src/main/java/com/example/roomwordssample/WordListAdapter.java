@@ -51,7 +51,7 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
         }
     }
 
-    class WordViewHolder extends RecyclerView.ViewHolder {
+    static class WordViewHolder extends RecyclerView.ViewHolder {
         private final TextView wordItemView;
 
         public WordViewHolder(@NonNull View itemView) {
